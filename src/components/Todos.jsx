@@ -8,7 +8,11 @@ class Todos extends Component {
             <div>
                 { 
                     this.props.todos.map((todo) => 
-                        <TodoItem key={todo.id} todo={todo} markCompleteTodoItem={this.props.markComplete} deleteTodoItem={this.props.deleteTodo} />
+                        <TodoItem 
+                            key={todo.id} 
+                            todo={todo} 
+                            markCompleteTodoItem={this.props.markComplete} 
+                            deleteTodoItem={this.props.deleteTodo} />
                     )
                 }
             </div>
@@ -18,7 +22,9 @@ class Todos extends Component {
 
 // PropTypes
 Todos.propTypes = {
-    todos: PropTypes.array.isRequired
+    todos: PropTypes.array.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    deleteTodo: PropTypes.func.isRequired
 }
  
 export default Todos;
